@@ -20,7 +20,7 @@ public class Level_01_Register {
 	// Ưu điểm:
 		// Tốc độ nhanh
 		// Code mẫu vài testcase để hiểu được cách dùng tool nào đó (PoC)
-		// POC là 1 vài exxample trong đó tập trung vào việc xác định xem 1 ý tưởng có thể biến thành thực hay không
+		// POC là 1 vài example trong đó tập trung vào việc xác định xem 1 ý tưởng có thể biến thành thực hay không
 		// Phù hợp dự án làm nhanh/ ngắn hạn/ thử nghiệm
 	// Nhược điểm:
 		// Sự lặp lại rất nhiều step: Locator/ Hàm Selenium
