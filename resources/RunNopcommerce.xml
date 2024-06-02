@@ -3,8 +3,8 @@
   <test name="Run on Chorme">
     <classes>
       <class name="com.nopcommerce.users.Level_02_Apply_BasePage_Intial"/>
-      <class name="com.nopcommerce.users.Level_03_Apply_BasePage_Static"/>
-      <class name="com.nopcommerce.users.Level_04_Apply_BasePage_Inheritance"/>
+      <class name="com.nopcommerce.users.Level_02_Apply_BasePage_Static"/>
+      <class name="com.nopcommerce.users.Level_02_Apply_BasePage_Inheritance"/>
     </classes>
   </test>
 </suite>

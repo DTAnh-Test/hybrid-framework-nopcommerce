@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Level_04_Apply_BasePage_Inheritance extends BasePage {
+public class Level_02_Apply_BasePage_Inheritance extends BasePage {
 
     WebDriver driver;
     String projectPath = System.getProperty("user.dir");

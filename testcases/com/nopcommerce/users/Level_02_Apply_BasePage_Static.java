@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Level_03_Apply_BasePage_Static {
+public class Level_02_Apply_BasePage_Static {
 
     WebDriver driver;
     BasePage basePage;
