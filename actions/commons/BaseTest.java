@@ -1,5 +1,6 @@
 package commons;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -18,16 +19,19 @@ public class BaseTest {
 
         switch (browserList){
             case CHROME:
-                System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
-                driver = new ChromeDriver();
+//                System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+//                driver = new ChromeDriver();
+                driver = WebDriverManager.chromedriver().create();
                 break;
             case FIREFOX:
-                System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
-                driver = new FirefoxDriver();
+//                System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+//                driver = new FirefoxDriver();
+                driver = WebDriverManager.firefoxdriver().create();
                 break;
             case EDGE:
-                System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
-                driver = new EdgeDriver();
+//                System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
+//                driver = new EdgeDriver();
+                driver = WebDriverManager.edgedriver().create();
                 break;
             default:
                 throw new RuntimeException("Browser is not support.");

@@ -14,13 +14,13 @@ public class RegisterPageUi {
 
     public static final String CONFIRM_PASSWORD_TEXTBOX = "//input[@id='ConfirmPassword']";
 
-    public static final String FIRST_NAME_ERROR_MESSAGE = "//span[@id='FirstName-error']";
+    public static final String FIRST_NAME_ERROR_MESSAGE = "//span[@data-valmsg-for='FirstName']";
 
-    public static final String LAST_NAME_ERROR_MESSAGE = "//span[@id='LastName-error']";
+    public static final String LAST_NAME_ERROR_MESSAGE = "//span[@data-valmsg-for='LastName']";
 
-    public static final String EMAIL_ERROR_MESSAGE = "//span[@id='Email-error']";
+    public static final String EMAIL_ERROR_MESSAGE = "//span[@data-valmsg-for='Email']";
 
-    public static final String CONFIRM_PASSWORD_ERROR_MESSAGE = "//span[@id='ConfirmPassword-error']";
+    public static final String CONFIRM_PASSWORD_ERROR_MESSAGE = "//span[@data-valmsg-for='ConfirmPassword']";
 
     public static final String REGISTER_SUCCESS_MESSAGE = "//div[@class='result']";
 
