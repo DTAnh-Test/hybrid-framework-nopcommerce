@@ -32,7 +32,6 @@ public class Level_03_Page_Object_Pattem {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
-        driver.get("https://demo.nopcommerce.com/");
         homePage = new HomePageObject(driver);
         loginPage = new LoginPageObject(driver);
         customerPage = new CustomerPageObject(driver);
