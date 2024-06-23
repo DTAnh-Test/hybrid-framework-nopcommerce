@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
@@ -48,7 +49,8 @@ public class BasePage {
     }
 
     public Alert waitForAlertPresence(WebDriver driver) {
-        return new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+//        return new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+        return new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.alertIsPresent());
     }
 
     public void acceptToAlert(WebDriver driver) {
@@ -156,7 +158,7 @@ public class BasePage {
     public void selectedCustomDropdown(WebDriver driver, String xpathParent, String xpathChild, String expectedText) {
         getElementByXpath(driver, xpathParent).click();
 
-        List<WebElement> allItems = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(xpathChild)));
+        List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(xpathChild)));
 
         for (WebElement tempElement : allItems) {
             if (tempElement.getText().equals(expectedText)) {
@@ -310,19 +312,19 @@ public class BasePage {
     }
 
     public void waitForElementVisible(WebDriver driver, String xpathLocator) {
-        new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(getByXpath(xpathLocator)));
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(getByXpath(xpathLocator)));
     }
 
     public void waitForListElementVisible(WebDriver driver, String xpathLocator) {
-        new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(xpathLocator)));
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(xpathLocator)));
     }
 
     public void waitForListElementClickAble(WebDriver driver, String xpathLocator) {
-        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(getByXpath(xpathLocator)));
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(getByXpath(xpathLocator)));
     }
 
     public void waitForListElementInVisible(WebDriver driver, String xpathLocator) {
-        new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(xpathLocator)));
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(xpathLocator)));
     }
 
 }
