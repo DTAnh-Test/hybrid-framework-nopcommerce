@@ -5,21 +5,21 @@
   <test name="Run on Chrome">
     <parameter name = "browser" value ="Chrome" />
     <classes>
-      <class name="com.nopcommerce.users.Level_04_Multiple_Browser"/>
+      <class name="com.nopcommerce.users.Level_05_Page_Factory"/>
     </classes>
   </test>
 
-  <test name="Run on Firefox">
-    <parameter name = "browser" value ="Firefox" />
-    <classes>
-      <class name="com.nopcommerce.users.Level_04_Multiple_Browser"/>
-    </classes>
-  </test>
+<!--  <test name="Run on Firefox">-->
+<!--    <parameter name = "browser" value ="Firefox" />-->
+<!--    <classes>-->
+<!--      <class name="com.nopcommerce.users.Level_04_Multiple_Browser"/>-->
+<!--    </classes>-->
+<!--  </test>-->
 
-  <test name="Run on Edge">
-    <parameter name = "browser" value ="Edge" />
-    <classes>
-      <class name="com.nopcommerce.users.Level_04_Multiple_Browser"/>
-    </classes>
-  </test>
+<!--  <test name="Run on Edge">-->
+<!--    <parameter name = "browser" value ="Edge" />-->
+<!--    <classes>-->
+<!--      <class name="com.nopcommerce.users.Level_04_Multiple_Browser"/>-->
+<!--    </classes>-->
+<!--  </test>-->
 </suite>
