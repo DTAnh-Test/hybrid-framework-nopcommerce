@@ -7,12 +7,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageFactory.CustomerPageObject;
-import pageFactory.HomePageObject;
-import pageFactory.LoginPageObject;
-import pageFactory.RegisterPageObject;
+import pageObject.*;
 
-public class Level_05_Page_Factory extends BaseTest {
+public class Level_06_Page_Generator extends BaseTest {
 
     private WebDriver driver;
 
@@ -26,16 +23,12 @@ public class Level_05_Page_Factory extends BaseTest {
     public void beforeClass(String browserName, String url) {
         driver = getBrowserDriver(browserName, url);
 
-        homePage = new HomePageObject(driver);
-        loginPage = new LoginPageObject(driver);
-        customerPage = new CustomerPageObject(driver);
-        registerPage = new RegisterPageObject(driver);
+        homePage = PageGenaratorManager.getHonePage(driver);
     }
 
     @Test
     public void Register_01_Empty_Data() {
-
-        homePage.clickRegisterLink();
+        registerPage = homePage.clickRegisterLink();
         registerPage.clickRegisterButton();
 
         Assert.assertEquals(registerPage.getFirstNameErrorMessage(), "First name is required.");
@@ -44,7 +37,7 @@ public class Level_05_Page_Factory extends BaseTest {
         Assert.assertEquals(registerPage.getConfirmPasswordErrorMessage(), "Password is required.");
     }
 
-//    @Test
+    @Test
     public void Register_02_Invalid_Email() {
 
         registerPage.clearFirstNameTextbox();
@@ -108,16 +101,16 @@ public class Level_05_Page_Factory extends BaseTest {
         Assert.assertTrue(registerPage.isRegisterSuccessMessageDisplayed());
         Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
 
-        registerPage.clickContinueButton();
+        homePage = registerPage.clickContinueButton();
 
         homePage.clickLogOutLink();
 
-        homePage.clickLoginLink();
+        loginPage = homePage.clickLoginLink();
         loginPage.sendKeyToEmailTextbox(emailAddress);
         loginPage.sendKeyToPasswordTextbox("123456");
-        loginPage.clickLoginButton();
+        homePage = loginPage.clickLoginButton();
 
-        homePage.clickMyAccountLink();
+        customerPage = homePage.clickMyAccountLink();
 
         Assert.assertEquals(customerPage.getFirstNameAttributeValue("value"), "John");
         Assert.assertEquals(customerPage.getLastNameAttributeValue("value"), "Wick");

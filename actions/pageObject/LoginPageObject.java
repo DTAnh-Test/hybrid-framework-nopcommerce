@@ -21,8 +21,9 @@ public class LoginPageObject extends BasePage {
         sendkeyToElement(driver, LoginPageUi.PASSWORD_TEXTBOX, content);
     }
 
-    public void clickLoginButton() {
+    public HomePageObject clickLoginButton() {
         waitForListElementClickAble(driver, LoginPageUi.LOGIN_BUTTON);
         clickToElement(driver, LoginPageUi.LOGIN_BUTTON);
+        return PageGenaratorManager.getHonePage(driver);
     }
 }

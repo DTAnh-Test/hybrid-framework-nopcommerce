@@ -17,7 +17,7 @@ public class BaseTest {
     private WebDriver driver;
     private String projectPath = System.getProperty("user.dir");
 
-    protected WebDriver getBrowserDriver(String browserName) {
+    protected WebDriver getBrowserDriver(String browserName, String url) {
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 
         switch (browserList) {
@@ -48,7 +48,7 @@ public class BaseTest {
                 throw new RuntimeException("Browser is not support.");
         }
 
-        driver.get("https://demo.nopcommerce.com/");
+        driver.get(url);
 //        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
