@@ -21,10 +21,10 @@ public class Level_04_Multiple_Browser extends BaseTest {
     private LoginPageObject loginPage;
     private CustomerPageObject customerPage;
 
-    @Parameters("browser")
+    @Parameters({"browser", "userUrl"})
     @BeforeClass
-    public void beforeClass(String browserName) {
-        driver = getBrowserDriver(browserName);
+    public void beforeClass(String browserName, String url) {
+        driver = getBrowserDriver(browserName, url);
 
         homePage = new HomePageObject(driver);
         loginPage = new LoginPageObject(driver);

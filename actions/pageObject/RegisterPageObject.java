@@ -106,8 +106,9 @@ public class RegisterPageObject extends BasePage {
         return getElementText(driver, RegisterPageUi.REGISTER_SUCCESS_MESSAGE);
     }
 
-    public void clickContinueButton() {
+    public HomePageObject clickContinueButton() {
         waitForListElementClickAble(driver, RegisterPageUi.CONTINUE_BUTTON);
         clickToElement(driver, RegisterPageUi.CONTINUE_BUTTON);
+        return PageGenaratorManager.getHonePage(driver);
     }
 }
