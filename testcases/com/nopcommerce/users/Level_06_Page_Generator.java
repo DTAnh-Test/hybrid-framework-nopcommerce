@@ -1,13 +1,14 @@
 package com.nopcommerce.users;
 
 import commons.BaseTest;
+import commons.PageGenaratorManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObject.*;
+import pageObject.users.*;
 
 public class Level_06_Page_Generator extends BaseTest {
 

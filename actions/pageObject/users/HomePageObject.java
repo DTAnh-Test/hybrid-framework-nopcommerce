@@ -1,8 +1,9 @@
-package pageObject;
+package pageObject.users;
 
 import commons.BasePage;
+import commons.PageGenaratorManager;
 import org.openqa.selenium.WebDriver;
-import pageUis.HomePageUi;
+import pageUis.users.HomePageUi;
 
 public class HomePageObject extends BasePage {
     // Chứa những action của page: click/ select/getText/...

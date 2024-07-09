@@ -1,14 +1,17 @@
 package commons;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObject.admin.AdminLoginPageObject;
+import pageObject.users.HomePageObject;
+import pageUis.admin.AdminLoginPageUi;
+import pageUis.users.BasePageUi;
 
-import javax.swing.*;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
@@ -327,4 +330,34 @@ public class BasePage {
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(xpathLocator)));
     }
 
+    public HomePageObject clickUserLogout(WebDriver driver){
+        waitForListElementClickAble(driver, BasePageUi.USER_LOGOUT_LINK);
+        clickToElement(driver, BasePageUi.USER_LOGOUT_LINK);
+        return PageGenaratorManager.getHonePage(driver);
+    }
+
+    public AdminLoginPageObject clickAdminLogout(WebDriver driver){
+        waitForListElementClickAble(driver, BasePageUi.ADMIN_LOGOUT_LINK);
+        clickToElement(driver, BasePageUi.ADMIN_LOGOUT_LINK);
+        return PageGenaratorManager.getAdminLoginPage(driver);
+    }
+
+    public boolean isPageLoadedSuccess(WebDriver driver) {
+        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return (Boolean) jsExecutor.executeScript("return (window.jQuery != null) && (jQuery.active === 0);");
+            }
+        };
+
+        ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return jsExecutor.executeScript("return document.readyState").toString().equals("complete");
+            }
+        };
+        return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
+    }
 }

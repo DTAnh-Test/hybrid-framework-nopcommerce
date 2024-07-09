@@ -1,4 +1,4 @@
-package pageUis;
+package pageUis.users;
 
 public class HomePageUi {
     // Chứa những locator/ element của page
