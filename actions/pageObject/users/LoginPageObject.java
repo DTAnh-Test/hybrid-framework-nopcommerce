@@ -1,8 +1,9 @@
-package pageObject;
+package pageObject.users;
 
 import commons.BasePage;
+import commons.PageGenaratorManager;
 import org.openqa.selenium.WebDriver;
-import pageUis.LoginPageUi;
+import pageUis.users.LoginPageUi;
 
 public class LoginPageObject extends BasePage {
     private WebDriver driver;
@@ -11,9 +12,9 @@ public class LoginPageObject extends BasePage {
         this.driver = driver;
     }
 
-    public void sendKeyToEmailTextbox(String content) {
+    public void sendKeyToEmailTextbox(String emailAddress) {
         waitForElementVisible(driver, LoginPageUi.EMAIL_TEXTBOX);
-        sendkeyToElement(driver, LoginPageUi.EMAIL_TEXTBOX, content);
+        sendkeyToElement(driver, LoginPageUi.EMAIL_TEXTBOX, emailAddress);
     }
 
     public void sendKeyToPasswordTextbox(String content) {
@@ -24,6 +25,13 @@ public class LoginPageObject extends BasePage {
     public HomePageObject clickLoginButton() {
         waitForListElementClickAble(driver, LoginPageUi.LOGIN_BUTTON);
         clickToElement(driver, LoginPageUi.LOGIN_BUTTON);
+        return PageGenaratorManager.getHonePage(driver);
+    }
+
+    public HomePageObject loginWithUser(String emailAddress, String password){
+        sendKeyToEmailTextbox(emailAddress);
+        sendKeyToPasswordTextbox(password);
+        clickLoginButton();
         return PageGenaratorManager.getHonePage(driver);
     }
 }

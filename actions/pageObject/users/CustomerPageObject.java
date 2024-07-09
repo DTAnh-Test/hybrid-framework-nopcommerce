@@ -1,13 +1,13 @@
-package pageObject;
+package pageObject.users;
 
-import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageUis.CustomerPageUi;
+import pageUis.users.CustomerPageUi;
 
-public class CustomerPageObject extends BasePage {
+public class CustomerPageObject extends SideBarMyAccountPageObject {
     private WebDriver driver;
 
     public CustomerPageObject(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
@@ -25,4 +25,5 @@ public class CustomerPageObject extends BasePage {
         waitForElementVisible(driver, CustomerPageUi.EMAIL_TEXTBOX);
         return getElementAttribute(driver, CustomerPageUi.EMAIL_TEXTBOX, attributeName);
     }
+
 }

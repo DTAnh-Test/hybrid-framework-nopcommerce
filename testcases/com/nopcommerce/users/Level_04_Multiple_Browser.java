@@ -7,10 +7,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObject.CustomerPageObject;
-import pageObject.HomePageObject;
-import pageObject.LoginPageObject;
-import pageObject.RegisterPageObject;
+import pageObject.users.CustomerPageObject;
+import pageObject.users.HomePageObject;
+import pageObject.users.LoginPageObject;
+import pageObject.users.RegisterPageObject;
 
 public class Level_04_Multiple_Browser extends BaseTest {
 
