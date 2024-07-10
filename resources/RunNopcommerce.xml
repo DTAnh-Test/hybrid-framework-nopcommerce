@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Nopcommerce UI Automation">
-  <parameter name="userUrl" value ="https://demo.nopcommerce.com/" />
-  <parameter name="adminUrl" value ="https://admin-demo.nopcommerce.com/" />
+<!--  <parameter name="userUrl" value ="https://demo.nopcommerce.com/" />-->
+<!--  <parameter name="adminUrl" value ="https://admin-demo.nopcommerce.com/" />-->
 
   <test name="Run on Chrome">
     <parameter name = "browser" value ="Chrome" />
     <classes>
-      <class name="com.nopcommerce.users.Level_09_Switch_Site_Url"/>
+      <class name="com.nopcommerce.users.Level_10_Refactor_By_Locator_Global_Constant"/>
     </classes>
   </test>
 

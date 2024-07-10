@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
     // Chứa các hàm dùng dùng chung cho cả layer testcase
     private WebDriver driver;
-    private String projectPath = System.getProperty("user.dir");
+    private String projectPath = GlobalConstants.RELATIVE_PROJECT_PATH;
 
     protected WebDriver getBrowserDriver(String browserName, String url) {
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -50,7 +50,7 @@ public class BaseTest {
 
         driver.get(url);
 //        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
         driver.manage().window().maximize();
         return driver;
     }
